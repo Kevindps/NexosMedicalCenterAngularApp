@@ -1,0 +1,35 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="patientId" [value]="service.formData.patientId" />
+  <div class="form-group">
+    <label>PATIENT FULL NAME</label>
+    <input class="form-control form-control-lg" placeholder="Patient Full Name" name="patientFullName"
+      #patientFullName="ngModel" [(ngModel)]="service.formData.patientFullName"
+      required [class.invalid]="patientFullName.invalid && patientFullName.touched">
+  </div>
+  <div class="form-group">
+    <label>PATIENT SOCIAL SECURITY NUMBER</label>
+    <input class="form-control form-control-lg" placeholder="Patient Social Security Number" name="patientSocialSecurityNumber"
+      #patientSocialSecurityNumber="ngModel" [(ngModel)]="service.formData.patientSocialSecurityNumber"
+      required maxlength="32" [class.invalid]="patientSocialSecurityNumber.invalid && patientSocialSecurityNumber.touched">
+  </div>
+  <div class="form-group">
+    <label>PATIENT POSTAL CODE</label>
+    <input class="form-control form-control-lg" placeholder="Patient Postal Code" name="patientPostalCode"
+      #patientPostalCode="ngModel" [(ngModel)]="service.formData.patientPostalCode"
+      required minlength="6" maxlength="6" [class.invalid]="patientPostalCode.invalid && patientPostalCode.touched">
+  </div>
+  <div class="form-group">
+    <label>PATIENT CONTACT NUMBER</label>
+    <input class="form-control form-control-lg" placeholder="Patient Contact Number" name="patientContactNumber"
+      #patientContactNumber="ngModel" [(ngModel)]="service.formData.patientContactNumber"
+      required minlength="10" maxlength="10" [class.invalid]="patientContactNumber.invalid && patientContactNumber.touched">
+  </div>
+  <div class="form-group">
+    <label>PATIENT DOCTORS (ONLY CAN USED WITH PREVIUS CREATED PATIENT)</label>
+    <igx-combo [data]="doctorService.list" displayKey="doctorFullName" name="patientDoctors"
+      #patientDoctors="ngModel" [(ngModel)]="service.formData.patientDoctors"></igx-combo>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+  </div>
+</form>

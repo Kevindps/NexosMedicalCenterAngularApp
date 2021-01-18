@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/minireset.css/minireset.css",
+              "src/styles.css",
+              "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -91,7 +95,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/igniteui-angular/styles/igniteui-angular.css"
             ],
             "scripts": []
           }
@@ -124,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "AngularApp"
+  "defaultProject": "AngularApp",
+  "cli": {
+    "analytics": "fb8c6c5b-27e9-49b7-b5ba-05420a1f869a"
+  }
 }

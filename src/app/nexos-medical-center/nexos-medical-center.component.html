@@ -1,0 +1,66 @@
+<div class="jumbotron py-3">
+  <h1 class="display-4 text-center">Nexos Medical Center</h1>
+</div>
+
+<div class="row">
+  <div #doctorForm class="col-md-6">
+    <app-doctors-form></app-doctors-form>
+  </div>
+  <div class="col-md-6 tableFixHead" [style.height.px]="doctorsTableColumnHeight">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Credencial Number</th>
+          <th>Specialty</th>
+          <th>Hospital</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of doctorService.list">
+          <td (click)="populateDoctorForm(pd)">{{pd.doctorId}}</td>
+          <td (click)="populateDoctorForm(pd)">{{pd.doctorFullName}}</td>
+          <td (click)="populateDoctorForm(pd)">{{pd.doctorCredentialNumber}}</td>
+          <td (click)="populateDoctorForm(pd)">{{pd.doctorSpecialty}}</td>
+          <td (click)="populateDoctorForm(pd)">{{pd.doctorHospital}}</td>
+          <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDeleteDoctor(pd.doctorId)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div #patientForm class="col-md-6">
+    <app-patients-form></app-patients-form>
+  </div>
+  <div class="col-md-6 tableFixHead" [style.height.px]="patientsTableColumnHeight">
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Social Security Number</th>
+          <th>Postal Code</th>
+          <th>Contact Number</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pd of patientService.list">
+          <td (click)="populatePatientForm(pd)">{{pd.patientId}}</td>
+          <td (click)="populatePatientForm(pd)">{{pd.patientFullName}}</td>
+          <td (click)="populatePatientForm(pd)">{{pd.patientSocialSecurityNumber}}</td>
+          <td (click)="populatePatientForm(pd)">{{pd.patientPostalCode}}</td>
+          <td (click)="populatePatientForm(pd)">{{pd.patientContactNumber}}</td>
+          <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDeletePatient(pd.patientId)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
