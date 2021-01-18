@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Angular App Content
+
+The nexos medical center angular app contains the next:
+
+- An Form For The Doctor's Registration With ComboBox For Easy Relationship With The System Patients.
+- A Table With Fuction As Edit The Previus Registrations And Delete Previos Registrations
